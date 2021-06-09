@@ -56,7 +56,7 @@ jobs:
     #       --tag "repox-sonarsource-docker-releases.jfrog.io/sonarsource/sonar-scanner-cli:latest" \
     #       --build-arg SONAR_SCANNER_VERSION=${{ steps.get_version.outputs.cli_version }}
     - name: Test image
-      run: ./run-tests.sh "docker.pkg.github.com/${{ github.repository }}/sonar-scanner-cli:${{ steps.get_version.outputs.version }}"
+      run: ./run-tests.sh "docker.pkg.github.com/${{ steps.string.outputs.lowercase }}/sonar-scanner-cli:${{ steps.get_version.outputs.version }}"
     - name: Push container image
       uses: docker/build-push-action@v2
       with:
