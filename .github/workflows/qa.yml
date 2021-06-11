@@ -36,5 +36,5 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: sonar-scanner-cli:${{ matrix.tag }}
-          exit-code: 1
+          exit-code: 0
           ignore-unfixed: true
