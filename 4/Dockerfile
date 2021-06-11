@@ -28,7 +28,7 @@ apk del ca-certificates tar openssl gnupg
 ENV PATH=$PATH:$LEIN_INSTALL
 ENV LEIN_ROOT 1
 
-RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.10.3"][clj-kondo "RELEASE"]] :plugins [[jonase/eastwood "0.3.13"][lein-kibit "0.1.8"][lein-ancient "0.6.15"][lein-cloverage "1.2.2"][lein-nvd "1.4.0"]])' > project.clj \
+RUN echo '(defproject dummy "" :dependencies [[org.clojure/clojure "1.10.3"][clj-kondo "RELEASE"]] :plugins [[jonase/eastwood "0.4.3"][lein-kibit "0.1.8"][lein-ancient "0.7.0"][lein-cloverage "1.2.2"][lein-nvd "1.4.1"]])' > project.clj \
 && lein deps && rm project.clj
 
 # install sonar_scanner
